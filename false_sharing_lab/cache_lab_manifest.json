@@ -1,0 +1,171 @@
+{
+    "git_username": "Luri1337",
+    "logical_cores": 12,
+    "cpu_model": "AMD64::AMD64 Family 25 Model 80 Stepping 0, AuthenticAMD::AMD64 Family 25 Model 80 Stepping 0, AuthenticAMD",
+    "cache_line_size": 64,
+    "instance_seed": 2513352704460688102,
+    "available_cpu_ids": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11
+    ],
+    "iterations_per_thread": 60000000,
+    "benchmark": {
+        "1": {
+            "elapsed_ns": 2164600,
+            "average_ns_per_update": 0.009019166666666667,
+            "final_counters": [
+                360000000,
+                180000000,
+                300000000,
+                120000000
+            ],
+            "expected_counters": [
+                360000000,
+                180000000,
+                300000000,
+                120000000
+            ],
+            "parity_passed": true,
+            "context_switches": {
+                "voluntary": null,
+                "involuntary": null
+            },
+            "affinity_applied": [
+                true,
+                true,
+                true,
+                true
+            ],
+            "slowdown_vs_stride_8": 0.7450265023748881
+        },
+        "4": {
+            "elapsed_ns": 965300,
+            "average_ns_per_update": 0.004022083333333333,
+            "final_counters": [
+                360000000,
+                180000000,
+                300000000,
+                120000000
+            ],
+            "expected_counters": [
+                360000000,
+                180000000,
+                300000000,
+                120000000
+            ],
+            "parity_passed": true,
+            "context_switches": {
+                "voluntary": null,
+                "involuntary": null
+            },
+            "affinity_applied": [
+                true,
+                true,
+                true,
+                true
+            ],
+            "slowdown_vs_stride_8": 0.33224340882494663
+        },
+        "8": {
+            "elapsed_ns": 2905400,
+            "average_ns_per_update": 0.012105833333333333,
+            "final_counters": [
+                360000000,
+                180000000,
+                300000000,
+                120000000
+            ],
+            "expected_counters": [
+                360000000,
+                180000000,
+                300000000,
+                120000000
+            ],
+            "parity_passed": true,
+            "context_switches": {
+                "voluntary": null,
+                "involuntary": null
+            },
+            "affinity_applied": [
+                true,
+                true,
+                true,
+                true
+            ]
+        },
+        "16": {
+            "elapsed_ns": 1203200,
+            "average_ns_per_update": 0.005013333333333333,
+            "final_counters": [
+                360000000,
+                180000000,
+                300000000,
+                120000000
+            ],
+            "expected_counters": [
+                360000000,
+                180000000,
+                300000000,
+                120000000
+            ],
+            "parity_passed": true,
+            "context_switches": {
+                "voluntary": null,
+                "involuntary": null
+            },
+            "affinity_applied": [
+                true,
+                true,
+                true,
+                true
+            ],
+            "slowdown_vs_stride_8": 0.4141254216286914
+        },
+        "register_private": {
+            "elapsed_ns": 2769700,
+            "average_ns_per_update": 0.011540416666666666,
+            "final_counters": [
+                360000000,
+                180000000,
+                300000000,
+                120000000
+            ],
+            "expected_counters": [
+                360000000,
+                180000000,
+                300000000,
+                120000000
+            ],
+            "parity_passed": true,
+            "context_switches": {
+                "voluntary": null,
+                "involuntary": null
+            },
+            "affinity_applied": [
+                true,
+                true,
+                true,
+                true
+            ],
+            "slowdown_vs_stride_8": 0.9532938665932402
+        }
+    },
+    "llvm_audit": {
+        "native_i64_store_present": true,
+        "python_object_fallback_detected": true,
+        "llvm_ir_excerpt": "  %.174.promoted = load i64, ptr %.174, align 8\\n  store i64 %2, ptr %.174, align 8\\n  %.30 = load i64, ptr %sunkaddr, align 8\\n  %.37.fca.5.0.load = load i64, ptr %sunkaddr2, align 8\\n  %.174.promoted = load i64, ptr %.174, align 8\\n  store i64 %2, ptr %.174, align 8\\n  %.30 = load i64, ptr %sunkaddr, align 8\\n  %.37.fca.5.0.load = load i64, ptr %sunkaddr2, align 8"
+    },
+    "parity_passed": true,
+    "llvm_audit_passed": false,
+    "verification_passed": false
+}

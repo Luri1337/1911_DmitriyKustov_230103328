@@ -1,0 +1,151 @@
+{
+  "github_username": "Luri1337",
+  "instance_seed": 11423127226005358914,
+  "cpu_signature": "x86_64::x86_64::2",
+  "logical_cpus": 2,
+  "cpu_cache_line_bytes": 64,
+  "shared_window_alignment_offset_bytes": 56,
+  "shared_window_is_64_byte_aligned": true,
+  "gpu_name": "Tesla T4",
+  "gpu_uuid": "GPU-ded8f9a5-8e55-ac1d-dbee-b7fff2eb9119",
+  "gpu_compute_capability": "7.5",
+  "mpi_ranks": 4,
+  "cartesian_dimensions": [
+    2,
+    2
+  ],
+  "rank_topology": [
+    {
+      "rank": 0,
+      "cart_coords": [
+        0,
+        0
+      ],
+      "neighbors": [
+        -2,
+        2,
+        -2,
+        1
+      ]
+    },
+    {
+      "rank": 1,
+      "cart_coords": [
+        0,
+        1
+      ],
+      "neighbors": [
+        -2,
+        3,
+        0,
+        -2
+      ]
+    },
+    {
+      "rank": 2,
+      "cart_coords": [
+        1,
+        0
+      ],
+      "neighbors": [
+        0,
+        -2,
+        -2,
+        3
+      ]
+    },
+    {
+      "rank": 3,
+      "cart_coords": [
+        1,
+        1
+      ],
+      "neighbors": [
+        1,
+        -2,
+        2,
+        -2
+      ]
+    }
+  ],
+  "global_grid": [
+    512,
+    512
+  ],
+  "local_interior_per_rank": [
+    256,
+    256
+  ],
+  "padded_local_shape": [
+    258,
+    258
+  ],
+  "stencil_steps": 300,
+  "dt": 1e-07,
+  "dx": 0.001949317738791423,
+  "kappa_max": 0.2,
+  "dt_max": 4.749799558458632e-06,
+  "cfl_stable": true,
+  "gpu_serialized_ms": 3379.355259,
+  "gpu_overlapped_ms": 2064.581976,
+  "gpu_overlap_speedup": 1.6368229977224213,
+  "max_diff_serialized_vs_overlapped": 0.0,
+  "serialized_global_energy": {
+    "0": 0.019634954084936207,
+    "100": 0.019623622276487993,
+    "200": 0.019612303554718595,
+    "300": 0.019600997896946422
+  },
+  "overlapped_global_energy": {
+    "0": 0.019634954084936207,
+    "100": 0.019623622276487993,
+    "200": 0.019612303554718595,
+    "300": 0.019600997896946422
+  },
+  "global_energy_monotonic": true,
+  "ptx_audit": {
+    "st.shared.f64": 5,
+    "ld.shared.f64": 5,
+    "bar.sync": 1,
+    "passed": true,
+    "ptx_excerpt": "\tst.shared.f64 \t[%rd89], %fd4;\n\tst.shared.f64 \t[%rd123], %fd5;\n\tst.shared.f64 \t[%rd158], %fd6;\n\tst.shared.f64 \t[%rd193], %fd7;\n\tst.shared.f64 \t[%rd228], %fd8;\n\tbar.sync \t0;\n\tld.shared.f64 \t%fd22, [%rd246+16];\n\tld.shared.f64 \t%fd23, [%rd241];\n\tld.shared.f64 \t%fd26, [%rd251];\n\tld.shared.f64 \t%fd32, [%rd257+288];\n\tld.shared.f64 \t%fd35, [%rd263];"
+  },
+  "shared_memory_stride_benchmark": {
+    "1": {
+      "elapsed_ns": 652463177,
+      "ns_per_update": 16.311579425,
+      "final_counter": 120000000,
+      "expected_counter": 120000000,
+      "parity_passed": true,
+      "increment": 3,
+      "ratio_vs_stride_8": 4.202606954975978
+    },
+    "8": {
+      "elapsed_ns": 155252010,
+      "ns_per_update": 3.88130025,
+      "final_counter": 120000000,
+      "expected_counter": 120000000,
+      "parity_passed": true,
+      "increment": 3,
+      "ratio_vs_stride_8": 1.0
+    },
+    "16": {
+      "elapsed_ns": 198892138,
+      "ns_per_update": 4.97230345,
+      "final_counter": 160000000,
+      "expected_counter": 160000000,
+      "parity_passed": true,
+      "increment": 4,
+      "ratio_vs_stride_8": 1.2810921932669341
+    },
+    "false_sharing_slowdown_stride1_vs_stride8": 4.202606954975978
+  },
+  "cpu_llvm_audit": {
+    "atomic_i64_load_count": 9,
+    "atomic_i64_store_count": 9,
+    "per_iteration_memory_accesses_verified": true,
+    "llvm_ir_excerpt": "  %.153.prol = load atomic i64, ptr %sunkaddr1 monotonic, align 8\n  store atomic i64 %.155.prol, ptr %sunkaddr1 monotonic, align 8\n  %.153 = load atomic i64, ptr %sunkaddr3 monotonic, align 8\n  store atomic i64 %.155, ptr %sunkaddr3 monotonic, align 8\n  %.153.1 = load atomic i64, ptr %sunkaddr3 monotonic, align 8\n  store atomic i64 %.155.1, ptr %sunkaddr3 monotonic, align 8\n  %.153.2 = load atomic i64, ptr %sunkaddr3 monotonic, align 8\n  store atomic i64 %.155.2, ptr %sunkaddr3 monotonic, align 8\n  %.153.3 = load atomic i64, ptr %sunkaddr3 monotonic, align 8\n  store atomic i64 %.155.3, ptr %sunkaddr3 monotonic, align 8\n  %.153.4 = load atomic i64, ptr %sunkaddr3 monotonic, align 8\n  store atomic i64 %.155.4, ptr %sunkaddr3 monotonic, align 8\n  %.153.5 = load atomic i64, ptr %sunkaddr3 monotonic, align 8\n  store atomic i64 %.155.5, ptr %sunkaddr3 monotonic, align 8\n  %.153.6 = load atomic i64, ptr %sunkaddr3 monotonic, align 8\n  store atomic i64 %.155.6, ptr %sunkaddr3 monotonic, align 8\n  %.153.7 = load atomic i64, ptr %sunkaddr3 monotonic, align 8\n  store atomic i64 %.155.7, ptr %sunkaddr3 monotonic, align 8"
+  },
+  "shared_memory_parity_passed": true,
+  "verification_passed": true
+}
